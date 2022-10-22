@@ -5,7 +5,7 @@ import time
 import pandas as pd
 import numpy as np
 import seaborn as sns
-from st_aggrid.shared import GridUpdateMode
+#from st_aggrid.shared import GridUpdateMode
 import base64  #to open .gif files in streamlit app
 from pandas.api.types import is_numeric_dtype
 from streamlit_option_menu import option_menu
@@ -126,7 +126,7 @@ if app_mode=='Home':
         )
         st.balloons()
 
-        st.write(emoji.emojize("""# :microbe: COVID-19 PandeMap :microbe:"""))
+        st.write(emoji.emojize("""# COVID-19 PandeMap """))
         st.write("""## How it works""")
         st.write("This tool will enable users to quickly visualize COVID-19 global evolution, "
         "track the development of the virus and its variants and measure the correlation "
