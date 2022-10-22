@@ -1,5 +1,5 @@
-from st_aggrid import AgGrid, GridOptionsBuilder
 from __future__ import annotations
+from st_aggrid import AgGrid, GridOptionsBuilder
 import streamlit as st
 import time
 import pandas as pd
