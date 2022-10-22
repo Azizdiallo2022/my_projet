@@ -1,5 +1,5 @@
 from __future__ import annotations
-from st_aggrid import AgGrid, GridOptionsBuilder
+#from st_aggrid import AgGrid, GridOptionsBuilder
 import streamlit as st
 import time
 import pandas as pd
@@ -176,7 +176,7 @@ elif app_mode=='Data_Exploring':
 
             data = pd.read_csv("data.csv")
             data=data.drop(["Unnamed: 0"], axis=1)
-            AgGrid(data)
+            #AgGrid(data)
             st.markdown('Display the head of Dataset')
             st.write(data.head())
             st.markdown('Display the tail of Dataset')
@@ -232,7 +232,8 @@ elif app_mode=='Data_Exploring':
 
             data = pd.read_csv("data_gdp.csv")
             data=data.drop(["Unnamed: 0"], axis=1)
-            AgGrid(data)
+            data
+            #AgGrid(data)
            #st.markdown('Display the head of Dataset')
           # st.write(data.head(a))
            #st.markdown('Display the tail of Dataset')
@@ -295,7 +296,7 @@ elif app_mode=='Data_Exploring':
 
                 data = pd.read_csv("cases_evolution.csv")
                 data=data.drop(["Unnamed: 0"], axis=1)
-                AgGrid(data)
+                #AgGrid(data)
                 st.markdown('Display the head of Dataset')
                 st.write(data.head(a))
                 st.markdown('Display the tail of Dataset')
@@ -330,7 +331,6 @@ elif app_mode=='Data_Exploring':
 
                 elif app_mod=='Summary': 
                       st.markdown('Display a Summary of Dataset')
-                      data=data.drop(["Unnamed: 0"], axis=1)
                       st.write(data.describe())
 
                 elif app_mod=='Covariate':
@@ -390,7 +390,7 @@ elif app_mode=='Data_Visualization':
                 key=None,
            )
       elif g =='Covid by Variants':
-                  st.write(emoji.emojize("""# :microbe: COVID-19 - A study by variants:"""))
+                  st.write(emoji.emojize("""# COVID-19 - A study by variants:"""))
         #st.write("""## How it works""")
                   st.write("This tool will enable users to quickly visualize COVID-19 global evolution, "
         "track the development of the virus and its variants and measure the correlation "
@@ -572,7 +572,7 @@ elif app_mode=='Data_Visualization':
 
       elif g == 'Covid in a Geographical Context':
         
-        st.write(emoji.emojize("""## :microbe: Dynamic World Map & GDP vs Infant Mortality Index :microbe:"""))
+        st.write(emoji.emojize("""##  Dynamic World Map & GDP vs Infant Mortality Index """))
 
         st.write("""This section features the lates COVID-19 data from a global and economical perspective: the first visalisation will provide a
         overview of the evolution of Covid cases across the globe, while the second one will compare the GDP vs Infant Mortality index, an insightful index for the health status of a country, to the number of
@@ -660,7 +660,7 @@ elif app_mode=='Data_Visualization':
                                     return time_filter, variant_filter,country_filter
 
                         time_filter, variant_filter, country_filter = user_input_features()
-                        st.write(emoji.emojize("""# :microbe: COVID-19 Cases by month:"""))
+                        st.write(emoji.emojize("""#  COVID-19 Cases by month:"""))
                         st.write("This interactive plot gives an overview of the monthly trends in covid evolution. "
                         "The filters on the left give the option of choosing the year, region and variant we wish "
                         "to study. On choosing any of the filters, both the plots will adjust accordingly. ")
