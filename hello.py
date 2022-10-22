@@ -1,10 +1,10 @@
+from st_aggrid import AgGrid, GridOptionsBuilder
 from __future__ import annotations
 import streamlit as st
 import time
 import pandas as pd
 import numpy as np
 import seaborn as sns
-from st_aggrid import AgGrid, GridOptionsBuilder
 from st_aggrid.shared import GridUpdateMode
 import base64  #to open .gif files in streamlit app
 from pandas.api.types import is_numeric_dtype
