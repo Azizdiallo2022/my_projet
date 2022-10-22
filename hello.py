@@ -30,7 +30,7 @@ from genericpath import exists
 from pickle import TRUE
 #from turtle import color, fillcolor
 from streamlit_plotly_events import plotly_events
-import _tkinter as TK
+#import _tkinter as TK
 
 linkedinlink = '[Github](https://github.com/Azizdiallo2022)'
 covidlink='[Kaggle](https://www.kaggle.com/datasets/yamqwe/omicron-covid19-variant-daily-cases?select=covid-variants.csv)'
