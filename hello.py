@@ -288,7 +288,7 @@ elif app_mode=='Data_Exploring':
                 app_mod = st.sidebar.selectbox('Statistic Describetive',['Sample','Nomber of Columns','Summary','Covariate','Correlation'])
  
                 if app_mod=='Sample':
-                      st.markdown(Tthe sample of Dataset')
+                      st.markdown('Tthe sample of Dataset')
                       c=st.sidebar.slider('Enter a number of sample', 5, 10)
                       st.write(data.sample(c))
  
