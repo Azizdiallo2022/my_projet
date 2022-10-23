@@ -192,7 +192,7 @@ elif app_mode=='Data_Exploring':
             st.write(data.isna().sum())
             
 
-            app_mod = st.sidebar.selectbox('Describetive Statistic ',['Sample','Nomber of Columns','Summary','Covariate','Correlation',])
+            app_mod = st.sidebar.selectbox('Describetive Statistic ',['Summary','Nomber of Columns','Covariate','Correlation',])
           
             #if app_mod=='Sample':
                         #st.markdown('The Sample of Dataset')
