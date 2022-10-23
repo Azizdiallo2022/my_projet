@@ -165,6 +165,7 @@ elif app_mode=='Data_Exploring':
     
         st.sidebar.header('All_Dataset')
         ds = st.sidebar.radio('',['Covid_by_Variants','Covid_in_a_Geographical_Context','Monthly_covid_evolution'])
+        
         if ds == 'Covid_by_Variants':
               
             a=st.sidebar.slider('Enter a number of head', 5, 10)
@@ -177,9 +178,9 @@ elif app_mode=='Data_Exploring':
             data = pd.read_csv("data.csv")
             data=data.drop(["Unnamed: 0"], axis=1)
             #AgGrid(data)
-            st.markdown('Display the head of Dataset')
+            st.markdown('The Head of Dataset')
             st.write(data.head())
-            st.markdown('Display the tail of Dataset')
+            st.markdown('The Tail of Dataset')
             st.write(data.tail())
             st.markdown('The Type of the Dataset')
             st.write(type(data))
@@ -191,7 +192,7 @@ elif app_mode=='Data_Exploring':
             st.write(data.isna().sum())
             
 
-            app_mod = st.sidebar.selectbox('Statistic Describetive',['Vue a Sample','Nomber of Columns','Summary','Covariate','Correlation',])
+            app_mod = st.sidebar.selectbox('Describetive Statistic ',['Sample','Nomber of Columns','Summary','Covariate','Correlation',])
           
             if app_mod=='Sample':
                         st.markdown('The Sample of Dataset')
@@ -265,12 +266,13 @@ elif app_mode=='Data_Exploring':
                 a=st.sidebar.slider('Enter a number of head', 5, 10)
                 b=st.sidebar.slider('Enter a number of tail', 5, 10)
 
-                st.title('Exploretion of Dataset :')     
+                st.title('Exploration of Dataset :')     
                 with st.spinner('Wait for it...'):
                      time.sleep(10)
 
                 data = pd.read_csv("cases_evolution.csv")
-                data=data.drop(["Unnamed: 0"], axis=1)
+                data=data.drop(["x"], axis=1)
+                #data=data.drop(["Unnamed: 0"], axis=1)
                 #AgGrid(data)
                 st.markdown('Display the head of Dataset')
                 st.write(data.head(a))
@@ -285,10 +287,10 @@ elif app_mode=='Data_Exploring':
                 st.markdown('Display the Miss value in Dataset')
                 st.write(data.isna().sum())
 
-                app_mod = st.sidebar.selectbox('Statistic Describetive',['Sample','Nomber of Columns','Summary','Covariate','Correlation'])
+                app_mod = st.sidebar.selectbox('Describetive Statistic ',['Sample','Nomber of Columns','Summary','Covariate','Correlation'])
  
                 if app_mod=='Sample':
-                      st.markdown('Tthe sample of Dataset')
+                      st.markdown('Sample of Dataset')
                       c=st.sidebar.slider('Enter a number of sample', 5, 10)
                       st.write(data.sample(c))
  
@@ -297,18 +299,18 @@ elif app_mode=='Data_Exploring':
                       st.write(data.columns)
 
                 elif app_mod=='Summary': 
-                      st.markdown('Summary of Dataset')
-                      data=data.drop(["date: 1"], axis=1)
-                      st.write(data.describe())
+                        st.markdown('Summary of Dataset')
+                        data=data.drop(["date"], axis=1)
+                        st.write(data.describe())
 
                 elif app_mod=='Covariate':
                       st.markdown('Summary for the covariate')
-                      data=data.drop(["date: 1"], axis=1)
+                      data=data.drop(["date"], axis=1)
                       st.write(data.cov())
 
                 elif app_mod=='Correlation':
                       st.markdown('Summary for the corelation')
-                      data=data.drop(["date: 1"], axis=1)
+                      data=data.drop(["date"], axis=1)
                       st.write(data.corr())
 
 elif app_mode=='Data_Visualization':
