@@ -194,12 +194,12 @@ elif app_mode=='Data_Exploring':
 
             app_mod = st.sidebar.selectbox('Describetive Statistic ',['Sample','Nomber of Columns','Summary','Covariate','Correlation',])
           
-            if app_mod=='Sample':
-                        st.markdown('The Sample of Dataset')
-                        c=10
-                        st.write(data.sample(c))
+            #if app_mod=='Sample':
+                        #st.markdown('The Sample of Dataset')
+                       
+                        #st.write(data.sample(c))
                         
-            elif app_mod=='Nomber of Columns':
+            if app_mod=='Nomber of Columns':
                       st.markdown('The Nomber of Columns')
                       st.write(data.columns)   
                       
