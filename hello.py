@@ -181,44 +181,37 @@ elif app_mode=='Data_Exploring':
             st.write(data.head())
             st.markdown('Display the tail of Dataset')
             st.write(data.tail())
+            st.markdown('The Type of the Dataset')
+            st.write(type(data))
+            st.markdown('The Shape of the Dataset')
+            st.write(data.shape)
+            st.markdown('The Summe of all Duplication')
+            st.write(data.duplicated().sum())
+            st.markdown('Display the Miss value in Dataset')
+            st.write(data.isna().sum())
+            
 
-
-            app_mod = st.sidebar.selectbox('Statistic Describetive',['Shape of Dataset','Vue a Sample', 'Summe of Duplications','Type of Dataset','Nomber of Columns','Miss_value','Summary','Covariate','Correlation',])
-
-            if app_mod=='Type of Dataset':
-                     st.markdown('The Type of the Dataset')
-                     st.write(type(data))
-
-            elif app_mod=='Shape of Dataset':
-                      st.markdown('The Shape of the Dataset')
-                      st.write(data.shape)
-            elif app_mod=='Vue a Sample':
-                        st.markdown('Display the sample of Dataset')
-                        c=st.sidebar.slider('Enter a number of sample', 1, 20)
+            app_mod = st.sidebar.selectbox('Statistic Describetive',['Vue a Sample','Nomber of Columns','Summary','Covariate','Correlation',])
+          
+            if app_mod=='Sample':
+                        st.markdown('The Sample of Dataset')
+                        c=st.sidebar.slider('Enter a number of sample', 5, 10)
                         st.write(data.sample(c))
-  
-            elif app_mod=='Summe of Duplications':
-                      st.markdown('The Summe of all Duplication')
-                      st.write(data.duplicated().sum())
-
+                        
             elif app_mod=='Nomber of Columns':
                       st.markdown('The Nomber of Columns')
-                      st.write(data.columns)
-
-            elif app_mod=='Miss_value':    
-                      st.markdown('Display the Miss value in Dataset')
-                      st.write(data.isna().sum())
-
+                      st.write(data.columns)   
+                      
             elif app_mod=='Summary': 
-                      st.markdown('Display a Summary of Dataset')
+                      st.markdown('Summary of Dataset')
                       st.write(data.describe())
 
             elif app_mod=='Covariate':
-                      st.markdown('Summary for the covariate')
+                      st.markdown('Summary for Covariate')
                       st.write(data.cov())
 
             elif app_mod=='Correlation':
-                      st.markdown('Summary for the corelation')
+                      st.markdown('Summary for Corelation')
                       st.write(data.corr())
                     
         elif ds == 'Covid_in_a_Geographical_Context':
@@ -238,51 +231,33 @@ elif app_mode=='Data_Exploring':
           # st.write(data.head(a))
            #st.markdown('Display the tail of Dataset')
           # st.write(data.tail(b))
+            st.markdown('The Type of the Dataset')
+            st.write(type(data))
+            st.markdown('The Shape of the Dataset')
+            st.write(data.shape)
+            st.markdown('The Summe of all Duplicated Values')
+            st.write(data.duplicated().sum())
+            st.markdown('The Miss value in Dataset')
+            st.write(data.isna().sum())
 
 
-            app_mod = st.sidebar.selectbox('Statistic Describetive',['Shape of Dataset','Vue a Sample', 'Summe of Duplications','Type of Dataset','Nomber of Columns','Miss_value','Summary','Covariate','Correlation',])
+            app_mod = st.sidebar.selectbox('Describetive Statistic',['Nomber of Columns','Summary','Covariate','Correlation'])
         
-        
 
-            if app_mod=='Type of Dataset':
-                     st.markdown('The Type of the Dataset')
-                     st.write(type(data))
-
-            elif app_mod=='Shape of Dataset':
-                
-                st.markdown('The Shape of the Dataset')
-                st.write(data.shape)
-            elif app_mod=='Vue a Sample':
-                    st.markdown('Display the sample of Dataset')
-                    c=st.sidebar.slider('Enter a number of sample', 1, 20)
-                    st.write(data.sample(c))
-
-            elif app_mod=='Summe of Duplications':
-                      st.markdown('The Summe of all Duplication')
-                      st.write(data.duplicated().sum())
-
-            elif app_mod=='Nomber of Columns':
+            if app_mod=='Nomber of Columns':
                       st.markdown('The Nomber of Columns')
                       st.write(data.columns)
 
-            elif app_mod=='Miss_value':    
-                    st.markdown('Display the Miss value in Dataset')
-                      
-                    st.write(data.isna().sum())
-
             elif app_mod=='Summary': 
                       st.markdown('Display a Summary of Dataset')
-                      #data=data.drop(["Unnamed: 0"], axis=1)
                       st.write(data.describe())
 
             elif app_mod=='Covariate':
                       st.markdown('Summary for the covariate')
-                      #data=data.drop(["Unnamed: 0"], axis=1)
                       st.write(data.cov())
 
             elif app_mod=='Correlation':
                       st.markdown('Summary for the corelation')
-                      #data=data.drop(["Unnamed: 0"], axis=1)
                       st.write(data.corr())
                 
         elif ds == 'Monthly_covid_evolution':
@@ -301,44 +276,39 @@ elif app_mode=='Data_Exploring':
                 st.write(data.head(a))
                 st.markdown('Display the tail of Dataset')
                 st.write(data.tail(b))
+                st.markdown('The Type of the Dataset')
+                st.write(type(data))
+                st.markdown('The Shape of the Dataset')
+                st.write(data.shape)
+                st.markdown('The Summe of all Duplication')
+                st.write(data.duplicated().sum())
+                st.markdown('Display the Miss value in Dataset')
+                st.write(data.isna().sum())
 
-
-                app_mod = st.sidebar.selectbox('Statistic Describetive',['Shape of Dataset','Vue a Sample', 'Summe of Duplications','Type of Dataset','Nomber of Columns','Miss_value','Summary','Covariate','Correlation',])
-
-                if app_mod=='Type of Dataset':
-                     st.markdown('The Type of the Dataset')
-                     st.write(type(data))
-
-                elif app_mod=='Shape of Dataset':
-                      st.markdown('The Shape of the Dataset')
-                      st.write(data.shape)
-                elif app_mod=='Vue a Sample':
+                app_mod = st.sidebar.selectbox('Statistic Describetive',['Sample','Nomber of Columns','Summary','Covariate','Correlation'])
+ 
+                if app_mod=='Sample':
                       st.markdown('Display the sample of Dataset')
-                      c=st.sidebar.slider('Enter a number of sample', 1, 20)
+                      c=st.sidebar.slider('Enter a number of sample', 5, 10)
                       st.write(data.sample(c))
-
-                elif app_mod=='Summe of Duplications':
-                      st.markdown('The Summe of all Duplication')
-                      st.write(data.duplicated().sum())
-
+ 
                 elif app_mod=='Nomber of Columns':
                       st.markdown('The Nomber of Columns')
                       st.write(data.columns)
 
-                elif app_mod=='Miss_value':    
-                      st.markdown('Display the Miss value in Dataset')
-                      st.write(data.isna().sum())
-
                 elif app_mod=='Summary': 
-                      st.markdown('Display a Summary of Dataset')
+                      st.markdown('Summary of Dataset')
+                      data=data.drop(["date: 0"], axis=1)
                       st.write(data.describe())
 
                 elif app_mod=='Covariate':
                       st.markdown('Summary for the covariate')
+                      data=data.drop(["date: 0"], axis=1)
                       st.write(data.cov())
 
                 elif app_mod=='Correlation':
                       st.markdown('Summary for the corelation')
+                      data=data.drop(["date: 0"], axis=1)
                       st.write(data.corr())
 
 elif app_mode=='Data_Visualization':
