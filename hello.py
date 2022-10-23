@@ -288,7 +288,7 @@ elif app_mode=='Data_Exploring':
                 app_mod = st.sidebar.selectbox('Statistic Describetive',['Sample','Nomber of Columns','Summary','Covariate','Correlation'])
  
                 if app_mod=='Sample':
-                      st.markdown('Display the sample of Dataset')
+                      st.markdown(Tthe sample of Dataset')
                       c=st.sidebar.slider('Enter a number of sample', 5, 10)
                       st.write(data.sample(c))
  
@@ -298,17 +298,17 @@ elif app_mode=='Data_Exploring':
 
                 elif app_mod=='Summary': 
                       st.markdown('Summary of Dataset')
-                      data=data.drop(["date: 0"], axis=1)
+                      data=data.drop(["date: 1"], axis=1)
                       st.write(data.describe())
 
                 elif app_mod=='Covariate':
                       st.markdown('Summary for the covariate')
-                      data=data.drop(["date: 0"], axis=1)
+                      data=data.drop(["date: 1"], axis=1)
                       st.write(data.cov())
 
                 elif app_mod=='Correlation':
                       st.markdown('Summary for the corelation')
-                      data=data.drop(["date: 0"], axis=1)
+                      data=data.drop(["date: 1"], axis=1)
                       st.write(data.corr())
 
 elif app_mode=='Data_Visualization':
