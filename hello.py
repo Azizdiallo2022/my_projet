@@ -196,8 +196,8 @@ elif app_mode=='Data_Exploring':
           
             if app_mod=='Sample':
                         st.markdown('The Sample of Dataset')
-                        #c=st.sidebar.slider('Enter a number of sample', 5, 10)
-                        st.write(data.sample(5))
+                        c=10
+                        st.write(data.sample(c))
                         
             elif app_mod=='Nomber of Columns':
                       st.markdown('The Nomber of Columns')
