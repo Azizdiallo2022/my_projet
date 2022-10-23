@@ -271,6 +271,7 @@ elif app_mode=='Data_Exploring':
                      time.sleep(10)
 
                 data = pd.read_csv("cases_evolution.csv")
+                data=data.drop(["Unnamed: 0"], axis=1)
                
                 #data=data.drop(["Unnamed: 0"], axis=1)
                 #AgGrid(data)
@@ -301,13 +302,13 @@ elif app_mode=='Data_Exploring':
                 elif app_mod=='Summary': 
                         st.markdown('Summary of Dataset')
                         data=data.drop(["date"], axis=1)
-                        data=data.drop(["x"], axis=1)
+                        #data=data.drop(["x"], axis=1)
                         st.write(data.describe())
 
                 elif app_mod=='Covariate':
                       st.markdown('Summary for the covariate')
                       data=data.drop(["date"], axis=1)
-                      data=data.drop(["x"], axis=1)
+                      #data=data.drop(["x"], axis=1)
                       st.write(data.cov())
 
                 elif app_mod=='Correlation':
