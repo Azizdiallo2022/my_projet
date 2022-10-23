@@ -197,7 +197,7 @@ elif app_mode=='Data_Exploring':
             if app_mod=='Sample':
                         st.markdown('The Sample of Dataset')
                         #c=st.sidebar.slider('Enter a number of sample', 5, 10)
-                        st.write(data.sample(10))
+                        st.write(data.sample())
                         
             elif app_mod=='Nomber of Columns':
                       st.markdown('The Nomber of Columns')
@@ -271,7 +271,7 @@ elif app_mode=='Data_Exploring':
                      time.sleep(10)
 
                 data = pd.read_csv("cases_evolution.csv")
-                data=data.drop(["x"], axis=1)
+               
                 #data=data.drop(["Unnamed: 0"], axis=1)
                 #AgGrid(data)
                 st.markdown('Display the head of Dataset')
@@ -301,16 +301,19 @@ elif app_mode=='Data_Exploring':
                 elif app_mod=='Summary': 
                         st.markdown('Summary of Dataset')
                         data=data.drop(["date"], axis=1)
+                        data=data.drop(["x"], axis=1)
                         st.write(data.describe())
 
                 elif app_mod=='Covariate':
                       st.markdown('Summary for the covariate')
                       data=data.drop(["date"], axis=1)
+                      data=data.drop(["x"], axis=1)
                       st.write(data.cov())
 
                 elif app_mod=='Correlation':
                       st.markdown('Summary for the corelation')
                       data=data.drop(["date"], axis=1)
+                      data=data.drop(["x"], axis=1)
                       st.write(data.corr())
 
 elif app_mode=='Data_Visualization':
