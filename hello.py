@@ -313,7 +313,7 @@ elif app_mode=='Data_Exploring':
                 elif app_mod=='Correlation':
                       st.markdown('Summary for the corelation')
                       data=data.drop(["date"], axis=1)
-                      data=data.drop(["x"], axis=1)
+                      #data=data.drop(["x"], axis=1)
                       st.write(data.corr())
 
 elif app_mode=='Data_Visualization':
