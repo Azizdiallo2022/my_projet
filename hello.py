@@ -109,8 +109,9 @@ if app_mode=='Home':
             if r.status_code != 200:
                 return None
             return r.json()
+        st.write(emoji.emojize("""# Research on Coronavirus Disease (COVID-19) """))
         
-        lottie_coding = load_lottiefile("welcome.json")  # replace link to local lottie file
+        lottie_coding = load_lottiefile("welcome.json") #replace link to local lottie file
         lottie_hello = load_lottieurl("https://assets9.lottiefiles.com/packages/lf20_69HH48.json")
 
         st_lottie(
@@ -126,7 +127,7 @@ if app_mode=='Home':
         )
         st.balloons()
 
-        st.write(emoji.emojize("""# COVID-19 PandeMap """))
+        
         st.write("""## How it works""")
         st.write("This tool will enable users to quickly visualize COVID-19 global evolution, "
         "track the development of the virus and its variants and measure the correlation "
